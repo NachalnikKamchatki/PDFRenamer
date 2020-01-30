@@ -14,6 +14,7 @@ def rename_pdf_file(src, dest):
 
 
 def get_name_and_author(dict_):
+    '''Trying to return title and author from dictionary...'''
     title = dict_.get('/Title', '')
     author = dict_.get('/Author', '')
     title = make_correct(title, forbidden)
@@ -22,6 +23,7 @@ def get_name_and_author(dict_):
 
 
 def get_pdf_info(filename, path):
+    '''Trying to return title and author from pdf file...'''
     if filename.lower().endswith('.pdf'):
         try:
             with open(os.path.join(path, filename), 'rb') as f:
